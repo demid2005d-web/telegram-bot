@@ -1,16 +1,21 @@
-from aiogram import Bot, Dispatcher, types
+import os
 import asyncio
+from aiogram import Bot, Dispatcher, types
+from aiogram.filters import CommandStart
 
-TOKEN = "ВАШ8692892233:AAFQ0tuhuj01WJ1ub6_sabpBaU5QyROh-do_НОВЫЙ_ТОКЕН_ОТ_BOTFATHER"
+# Railway сам подставит токен из вкладки Variables в эту переменную
+TOKEN = os.getenv("BOT_TOKEN")
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
-@dp.message()
-async def echo(message: types.Message):
-    await message.answer("Привет! Бот работает.")
+@dp.message(CommandStart())
+async def start_cmd(message: types.Message):
+    await message.answer("✅ Бот успешно запущен и работает на Railway!")
 
 async def main():
+    print("Бот запущен...")
     await dp.start_polling(bot)
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
