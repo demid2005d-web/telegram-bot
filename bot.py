@@ -3,8 +3,8 @@ import asyncio
 from aiogram import Bot, Dispatcher
 
 # Включаем отладку
-TOKEN = os.getenv("BOT_TOKEN")
-
+# Временно для проверки
+TOKEN = "8692892233:AAFQ0tuhuj01WJ1ub6_sabpBaU5QyROh-do"
 print(f"DEBUG: Значение TOKEN равно: {TOKEN}") # Это выведет значение в логи
 
 if TOKEN is None:
