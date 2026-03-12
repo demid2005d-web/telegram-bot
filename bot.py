@@ -4,7 +4,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters import CommandStart
 
 # Сейчас мы используем токен из кода для проверки
-TOKEN = "8692892233:AAF0tuhuj01WJ1ub6_sabpBaU5QyROh-do"
+TOKEN = "8692892233:AAGQLwqxMI0Y1U_uxOAxEZaFYwHU8EqtLWY"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
